@@ -41,6 +41,16 @@
     .video-details{padding:20px}.video-details small{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:1px}.video-details h3{margin:6px 0 15px;font-size:19px}.watch-link{display:inline-block;background:var(--accent);color:white;border-radius:9px;padding:10px 15px;font-weight:700;font-size:13px}
     @media(max-width:760px){.hero{grid-template-columns:1fr;padding:65px 0 52px;gap:32px}.profile-card{max-width:380px;justify-self:start}.about{grid-template-columns:1fr;gap:20px}.projects{grid-template-columns:1fr}.navlinks{gap:13px;font-size:12px}.contact{display:block;padding:30px}.contact .btn{margin-top:20px}footer{display:block}.hero h1{letter-spacing:-1.5px}}
     @media(max-width:420px){.wrap{width:min(100% - 28px,1080px)}.navlinks{gap:10px}.navlinks a:nth-child(2){display:none}.hero h1{font-size:42px}}
+
+    /* Smooth scroll reveal animations */
+    html{scroll-padding-top:82px}
+    .reveal{opacity:0;transform:translateY(42px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--delay,0ms)}
+    .reveal.is-visible{opacity:1;transform:translateY(0)}
+    .profile-card,.project,.video-card{transition:transform .35s ease,box-shadow .35s ease}
+    .profile-card:hover,.project:hover,.video-card:hover{transform:translateY(-7px);box-shadow:0 20px 48px rgba(28,35,70,.13)}
+    .btn,.watch-link{transition:transform .25s ease,filter .25s ease}
+    .btn:hover,.watch-link:hover{transform:translateY(-3px);filter:brightness(1.08)}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.profile-card,.project,.video-card,.btn,.watch-link{transition:none}}
   </style>
 </head>
 <body>
@@ -58,9 +68,7 @@
       <div class="actions"><a class="btn primary" href="#projects">View my projects</a><a class="btn" href="#contact">Connect with me</a></div>
     </div>
     <aside class="profile-card">
-      <img class="portrait"
-     src="./assets/picture.png"
-     alt="Mico Rosales">
+      <img class="portrait" src="assets/picture.png" alt="Portrait of Mico Rosales">
       <h3>Mico Rosales</h3>
       <p>Creative professional · IT Graduate</p>
       <div class="mini-line"></div>
@@ -94,7 +102,7 @@
         <div class="video-details"><small>VIDEO EDIT 01</small><h3>Cinematic Video Edit</h3><a class="watch-link" href="https://www.instagram.com/p/DfCEXh3yhlS/" target="_blank" rel="noopener noreferrer">Watch on Instagram ↗</a></div>
       </article>
       <article class="video-card">
-        <a class="video-thumb" href="https://www.instagram.com/p/DfJ-JZJy8lV/" target="_blank" rel="noopener noreferrer" aria-label="Watch Video Edit 02 on Instagram"><img src="assets/Nolies.png" alt="Video edit thumbnail with No Lie's title"><span class="play-circle">▶</span></a>
+        <a class="video-thumb" href="https://www.instagram.com/p/DfJ-JZJy8lV/" target="_blank" rel="noopener noreferrer" aria-label="Watch Video Edit 02 on Instagram"><img src="assets/NoIies.png" alt="Video edit thumbnail with No Lie's title"><span class="play-circle">▶</span></a>
         <div class="video-details"><small>VIDEO EDIT 02</small><h3>Typography Video Edit</h3><a class="watch-link" href="https://www.instagram.com/p/DfJ-JZJy8lV/" target="_blank" rel="noopener noreferrer">Watch on Instagram ↗</a></div>
       </article>
     </div>
@@ -135,6 +143,21 @@
   </div></section>
 </main>
 <footer class="wrap"><span>© <span id="year"></span> Mico Rosales. All rights reserved.</span><span>Video Editor · Graphic Designer · Front-End Developer</span></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const revealTargets=document.querySelectorAll('.hero > div, .profile-card, .section-head, .about > p, .skill-list > .tag, .video-card, .project, .contact');
+  revealTargets.forEach((el,i)=>{
+    el.classList.add('reveal');
+    if(el.matches('.skill-list > .tag')) el.style.setProperty('--delay',`${(i%5)*55}ms`);
+  });
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+    revealTargets.forEach(el=>observer.observe(el));
+  }else{revealTargets.forEach(el=>el.classList.add('is-visible'));}
+</script>
 </body>
 </html>
