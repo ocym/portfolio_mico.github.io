@@ -119,9 +119,11 @@ section{padding:76px 0}
 /* Projects as alternating rows */
 .project{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:28px 0;border-top:1px solid var(--line)}
 .project:nth-child(even) .shot{order:2}
-.shot{height:360px;border-radius:18px;border:1px solid var(--line);overflow:hidden;display:grid;place-items:center}
+.shot{position:relative;height:360px;border-radius:18px;border:1px solid var(--line);overflow:hidden;display:grid;place-items:center}
 .shot img{display:block;transition:transform .5s}
 .project:hover .shot img{transform:scale(1.03)}
+.visit{position:absolute;right:14px;bottom:14px;padding:7px 15px;border-radius:999px;background:var(--orange);color:#1a0c05;font-weight:700;font-size:14px;transition:background .2s}
+.shot:hover .visit{background:#ff8450}
 .shot.web{background:var(--panel)}
 .shot.web img{width:100%;height:100%;object-fit:cover}
 .shot.phone{background:linear-gradient(140deg,#3a1d2a,#7a2e48)}
@@ -247,7 +249,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
   <section id="projects"><div class="wrap">
     <div class="section-head"><h2>Featured projects</h2><p>A selection of my application and development work.</p></div>
     <article class="project">
-      <div class="shot phone"><img src="assets/fit.png" alt="Fit & Fierce app login screen" loading="lazy"></div>
+      <div class="shot web"><img src="assets/fierce.png" alt="Fit & Fierce sign-in page" loading="lazy"></div>
       <div>
         <div class="project-top"><span>E-commerce application</span><span class="tag">Project</span></div>
         <h3>Fit &amp; Fierce</h3>
@@ -256,7 +258,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
       </div>
     </article>
     <article class="project">
-      <div class="shot web"><img src="assets/udrrmo.png" alt="KaPiyu UDRRMO web sign-in page" loading="lazy"></div>
+      <a class="shot web" href="https://kapiyu-udrrmo.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the KaPiyu website"><img src="assets/udrrmo.png" alt="KaPiyu UDRRMO web sign-in page" loading="lazy"><span class="visit">Visit site ↗</span></a>
       <div>
         <div class="project-top"><span>Emergency application</span><span class="tag">Capstone</span></div>
         <h3>KaPiyu</h3>
