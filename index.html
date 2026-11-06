@@ -53,7 +53,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px;ga
 .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;padding:84px 0 80px}
 .status{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:14px;color:var(--muted)}
 .status i{width:9px;height:9px;border-radius:50%;background:var(--orange);animation:rec 1.6s infinite}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(56px,10vw,128px);line-height:.92;letter-spacing:-4px;margin:26px 0 22px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,7vw,92px);line-height:1;letter-spacing:-1px;margin:26px 0 22px}
 .hero h1 span{display:block;color:transparent;-webkit-text-stroke:2px var(--text)}
 .roles{font-size:19px;font-weight:700;margin:0 0 16px}
 .roles s{text-decoration:none;color:var(--orange);margin:0 8px}
@@ -75,8 +75,8 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px;ga
 
 /* Sections */
 section{padding:76px 0}
-.section-head{margin-bottom:36px;max-width:660px}
-.section-head h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,56px);line-height:1.02;letter-spacing:-1.5px;margin:0 0 10px}
+.section-head{margin-bottom:36px;max-width:900px}
+.section-head h2{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.4vw,50px);line-height:1.1;letter-spacing:0;margin:0 0 12px}
 .section-head p{color:var(--muted);margin:0}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-top:10px;border-top:1px solid var(--line)}
 .about p{margin:20px 0 0;color:var(--muted);font-size:18px}
@@ -84,9 +84,9 @@ section{padding:76px 0}
 
 /* Skills as tracks */
 .tracks{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel)}
-.row{display:grid;grid-template-columns:170px 1fr;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:230px 1fr;border-top:1px solid var(--line)}
 .row:first-child{border-top:0}
-.row h3{margin:0;padding:22px 24px;background:var(--panel-2);font-family:var(--display);font-size:17px;border-right:1px solid var(--line)}
+.row h3{margin:0;padding:22px 20px;background:var(--panel-2);font-family:var(--display);font-size:15px;overflow-wrap:anywhere;border-right:1px solid var(--line)}
 .clips{display:flex;flex-wrap:wrap;gap:8px;padding:18px 20px}
 .tag{padding:7px 14px;border-radius:7px;font-size:14px;font-weight:700;color:var(--text);background:rgba(255,106,43,.14);border-left:3px solid var(--orange)}
 .row:nth-child(2) .tag{background:rgba(61,214,198,.13);border-color:var(--teal)}
@@ -130,14 +130,14 @@ section{padding:76px 0}
 .shot.phone img{height:88%;width:auto;border-radius:20px;border:3px solid rgba(255,255,255,.9);box-shadow:0 24px 50px rgba(0,0,0,.45)}
 .project-top{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:14px}
 .project-top .tag{background:var(--panel-2);border-left-color:var(--orange)}
-.project h3{font-family:var(--display);font-weight:800;font-size:clamp(30px,4vw,44px);letter-spacing:-1px;line-height:1.05;margin:14px 0 12px}
+.project h3{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.6vw,40px);letter-spacing:0;line-height:1.1;margin:14px 0 12px}
 .project p{color:var(--muted);margin:0 0 22px}
 .stack{display:flex;flex-wrap:wrap;gap:8px}
 .stack span{padding:6px 13px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:700;background:var(--panel)}
 
 /* Contact */
 .contact{border-top:1px solid var(--line);padding-top:60px}
-.contact h2{font-family:var(--display);font-weight:800;font-size:clamp(40px,7.4vw,92px);line-height:.98;letter-spacing:-3px;margin:0 0 20px}
+.contact h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,72px);line-height:1.08;letter-spacing:-1px;margin:0 0 20px}
 .contact h2 em{font-style:normal;color:var(--orange)}
 .contact p{color:var(--muted);margin:0 0 34px;max-width:480px}
 .links{border-top:1px solid var(--line)}
@@ -168,7 +168,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
 }
 @media(max-width:600px){
   .navlinks a:nth-child(2),.navlinks a:nth-child(4){display:none}
-  .arrows{display:none}.hero h1{letter-spacing:-2.5px}.timecode{min-width:80px}
+  .arrows{display:none}.hero h1{letter-spacing:-1px}.timecode{min-width:80px}
   .links a{font-size:20px}
 }
 @media(prefers-reduced-motion:reduce){
@@ -204,7 +204,6 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
       <p class="sub">Creative professional and IT graduate</p>
       <div class="stat"><span>Based in</span><span>Laguna, Philippines</span></div>
       <div class="stat"><span>Specialties</span><span>Video, Design, Web</span></div>
-      <div class="stat"><span>Availability</span><span>Open to work</span></div>
     </aside>
   </div>
 
@@ -239,7 +238,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
         <div class="video-details"><small>Video edit 01</small><h3>Cinematic Video Edit</h3><a class="btn" href="https://www.instagram.com/p/DfCEXh3yhlS/" target="_blank" rel="noopener noreferrer">Watch on Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
       </article>
       <article class="video-card">
-        <a class="video-thumb" href="https://www.instagram.com/p/DfJ-JZJy8lV/" target="_blank" rel="noopener noreferrer" aria-label="Watch Video Edit 02 on Instagram"><img src="assets/Nolies.png" alt="Video edit thumbnail with No Lie's title"><span class="play-circle"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></a>
+        <a class="video-thumb" href="https://www.instagram.com/p/DfJ-JZJy8lV/" target="_blank" rel="noopener noreferrer" aria-label="Watch Video Edit 02 on Instagram"><img src="assets/NoIies.png" alt="Video edit thumbnail with No Lie's title"><span class="play-circle"><svg viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></svg></span></a>
         <div class="video-details"><small>Video edit 02</small><h3>Typography Video Edit</h3><a class="btn" href="https://www.instagram.com/p/DfJ-JZJy8lV/" target="_blank" rel="noopener noreferrer">Watch on Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
       </article>
     </div>
@@ -254,7 +253,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
         <div class="project-top"><span>E-commerce application</span><span class="tag">Project</span></div>
         <h3>Fit &amp; Fierce</h3>
         <p>An e-commerce application project designed around a clean shopping experience. The project includes product-focused screens and an application workflow for browsing and managing items.</p>
-        <div class="stack"><span>Flutter</span><span>Flask</span><span>MySQL</span></div>
+        <div class="stack"><span>Flutter</span><span>Flask</span><span>MySQL</span><span>HTML</span><span>CSS</span><span>Python</span><span>JavaScript</span></div>
       </div>
     </article>
     <article class="project">
@@ -263,7 +262,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
         <div class="project-top"><span>Emergency application</span><span class="tag">Capstone</span></div>
         <h3>KaPiyu</h3>
         <p>A campus emergency reporting application concept for Laguna State Polytechnic University – Sta. Cruz Campus. It aims to help users report incidents and support coordination with the University Disaster Risk Reduction and Management Office (UDRRMO).</p>
-        <div class="stack"><span>Flutter</span><span>Web / PWA</span><span>Supabase / Firebase</span><span>Image Processing</span></div>
+        <div class="stack"><span>Flutter</span><span>Web / PWA</span><span>Supabase / Firebase</span><span>Image Processing</span><span>TypeScript</span><span>JavaScript</span></div>
       </div>
     </article>
   </div></section>
